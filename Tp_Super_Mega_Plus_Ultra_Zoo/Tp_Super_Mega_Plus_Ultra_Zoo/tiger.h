@@ -1,14 +1,17 @@
-#ifndef TIGER_H_INCLUDED
-#define TIGER_H_INCLUDED
+#ifndef TIGER_H
+#define TIGER_H
 
-#include "ianimal.h"
+#include "IAnimal.h"
+
+
 
 class Tiger : public IAnimal
 {
 public:
-    Tiger();
+    Tiger(Zoo* zoo);
+
     virtual void show();
+    virtual bool fire();
 };
 
-#endif // TIGER_H_INCLUDED
-
+#endif // TIGER_H

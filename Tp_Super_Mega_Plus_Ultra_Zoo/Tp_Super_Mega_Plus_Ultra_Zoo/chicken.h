@@ -1,13 +1,18 @@
-#ifndef CHICKEN_H_INCLUDED
-#define CHICKEN_H_INCLUDED
+#ifndef CHICKEN_H
+#define CHICKEN_H
 
-#include "ianimal.h"
+#include "IAnimal.h"
+
+
+
 
 class Chicken : public IAnimal
 {
 public:
-    Chicken();
+    Chicken(Zoo* zoo);
+
     virtual void show();
+    virtual bool fire();
 };
 
-#endif // MCHICKEN_H_INCLUDED
+#endif // CHICKEN_H

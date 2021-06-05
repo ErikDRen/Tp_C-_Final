@@ -1,6 +1,4 @@
-#ifndef IANIMAL_H_INCLUDED
-#define IANIMAL_H_INCLUDED
-
+#pragma once
 class IAnimal
 {
     static int count;
@@ -9,6 +7,8 @@ public:
     virtual ~IAnimal();
     void virtual show() = 0;
     static int getCount();
+    bool virtual hungry() = 0;
+    static int checkAge() = 0
+
 };
-#endif // IANIMAL_H_INCLUDED
 

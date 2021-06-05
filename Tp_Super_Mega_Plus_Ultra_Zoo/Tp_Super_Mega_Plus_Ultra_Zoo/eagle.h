@@ -1,15 +1,19 @@
-#ifndef EAGLE_H_INCLUDED
-#define EAGLE_H_INCLUDED
+#ifndef EAGLE_H
+#define EAGLE_H
 
-#include "ianimal.h"
+#include "IAnimal.h"
+
+
 
 class Eagle : public IAnimal
 {
 public:
-    Eagle();
-    virtual void show();
+    Eagle(Zoo* zoo);
+    ~Eagle();
+     virtual void show();
+
+    virtual bool fire();
+     
 };
 
-
-#endif // EAGLE_H_INCLUDED
-a
+#endif // AIGLE_H
