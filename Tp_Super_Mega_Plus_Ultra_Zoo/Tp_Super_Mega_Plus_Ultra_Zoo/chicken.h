@@ -10,5 +10,4 @@ public:
     virtual void show();
 };
 
-
 #endif // MCHICKEN_H_INCLUDED
