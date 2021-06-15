@@ -23,6 +23,8 @@ public:
     int GetMoney();
     int GetMeatsStock();
     int GetSeedsStock();
+    int BuyMeats();
+    int BuySeeds();
     //static int GetCount();
     void PrintZooInfo();
     void addAnimal(IAnimal* animal);
