@@ -20,11 +20,11 @@ void Zoo::PrintZooInfo()
     cout << "*************************" << endl;
     cout << "Info du Zoo :" << endl;
     cout << "Money : " << m_money << endl;
-    cout << "Food : " << "meat : " << GetMeatsStock() << ", seed : " << GetSeedsStock() << endl;
+    cout << "Food : " << " meat : " << GetMeatsStock() << " seed : " << GetSeedsStock() << endl;
     //cout << "Nombre d'animaux : " << GetCount() << endl;
-    cout << "Nombre de Tigre -> m : " << "f : " << "t : " << endl;
-    cout << "Nombre de Poule -> m : " << "f : " << "t : " << endl;
-    cout << "Nombre d'Aigle -> m : " << "f : " << "t : " << endl;
+    cout << "Nombre de Tigre -> m : " << " f : " << " t : " << endl;
+    cout << "Nombre de Poule -> m : " << " f : " << " t : " << endl;
+    cout << "Nombre d'Aigle -> m : " << " f : " << " t : " << endl;
     cout << "*************************" << endl;
 }
 
@@ -50,26 +50,21 @@ void Zoo::fire()
     }
 }
 
-int Zoo::BuyMeats()
+
+void Zoo::BuyMeats()
 {
-    // int qtt = 0;
-    // cout << "How many do you want?" << endl;
-    // cin >> qtt;
-    // m_meats += qtt;
-    // m_money -= (5 * qtt);
-    m_meats++;
-    // m_money -= 5;
-    return m_meats;
+    int qtt = 0;
+    cout << "How many do you want?" << endl;
+    cin >> qtt;
+    m_meats += qtt;
+    m_money -= (5 * qtt);
 }
 
-int Zoo::BuySeeds()
+void Zoo::BuySeeds()
 {
-    // int qtt = 0;
-    // cout << "How many do you want?" << endl;
-    // cin >> qtt;
-    // m_seeds += qtt;
-    // m_money -= (5 * qtt);
-    m_seeds++;
-    // m_money -= 2,5;
-    return m_seeds;
+    int qtt = 0;
+    cout << "How many do you want?" << endl;
+    cin >> qtt;
+    m_seeds += qtt;
+    m_money -= (2.5 * qtt);
 }

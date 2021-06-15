@@ -12,6 +12,7 @@ class Game
 	Zoo m_zoo;
 	void gameLoop();
 	void chooseAnAction();
+	void ChooseFood();
 public:
 	Game();
 	~Game();

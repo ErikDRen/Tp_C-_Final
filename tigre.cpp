@@ -19,3 +19,11 @@ void Tigre::fire()
 {
     cout << "Je rugis" << endl;
 }
+
+// bool Tigre::CanBirth()
+// {
+//     if (female == true && age >= 6) {
+//         gestation = true
+//     }
+// }
+

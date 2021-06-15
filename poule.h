@@ -8,6 +8,7 @@ using namespace std;
 
 class Poule :public IAnimal
 {
+    int conso;
 public:
     Poule();
     Poule(string name);
