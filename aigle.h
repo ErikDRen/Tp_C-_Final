@@ -7,9 +7,18 @@ using namespace std;
 
 class Aigle :public IAnimal
 {
+    Zoo* m_zoo;
+    int conso;
+    // int myage;
+    // bool myfemale;
+    // bool myhungry;
+    // bool mysexual_maturity;
+    // bool mygestation;
 public:
-    Aigle();
-    Aigle(string name);
+    Aigle(Zoo* zoo);
+    Aigle(Zoo* zoo, string name, int age, bool female, bool hungry, bool sexual_maturity, bool gestation);
+    void Eat();
+    virtual void Update();
     virtual void fire();
 };
 

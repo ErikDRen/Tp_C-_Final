@@ -10,6 +10,16 @@ Zoo::Zoo(string name)
 }
 
 
+void Zoo::UpdateZoo()
+{
+    AnimalIterator it = m_animals.begin();
+    while (it != m_animals.end())
+    {
+        (*it)->Update();
+        it++;
+    }
+}
+
 string Zoo::getName(){ return m_name; }
 int Zoo::GetMoney() { return m_money; }
 int Zoo::GetMeatsStock() { return m_meats; }
@@ -67,4 +77,14 @@ void Zoo::BuySeeds()
     cin >> qtt;
     m_seeds += qtt;
     m_money -= (2.5 * qtt);
+}
+
+void Zoo::decreaseMeats(int op)
+{
+    m_meats -= op;
+}
+
+void Zoo::decreaseSeeds(int op)
+{
+    m_seeds -= op;
 }

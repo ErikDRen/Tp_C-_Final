@@ -3,16 +3,15 @@
 Game::Game()
 {
 	m_zoo = Zoo("Zoo de la Montagne");
-
-	m_zoo.addAnimal(new Tigre("Jey-Jey"));
-	m_zoo.addAnimal(new Tigre("Jeanine"));
+	m_zoo.addAnimal(new Tigre(&m_zoo, "Jey-Jey",12,false,false,false,false));
+	m_zoo.addAnimal(new Tigre(&m_zoo, "Jeanine",12,true,false,false,false));
 
 	for (int i = 0; i < 10; i++) {
-		m_zoo.addAnimal(new Poule());
+		m_zoo.addAnimal(new Poule(&m_zoo, "POULE" ,12,true,false,false,false));
 	}
 	//zoo.addAnimal(new Poule("poule 2"));
-	m_zoo.addAnimal(new Aigle("Gérard"));
-	m_zoo.addAnimal(new Aigle("Marie"));
+	m_zoo.addAnimal(new Aigle(&m_zoo, "Gérard",12,false,false,false,false));
+	m_zoo.addAnimal(new Aigle(&m_zoo, "Marie",12,true,false,false,false));
 
 	gameLoop();
 }
@@ -22,6 +21,7 @@ Game::~Game() {}
 
 void Game::gameLoop()
 {
+	
 	int choice = 0;
 	for (int years = 0; years < 10; years++) {
 		for (int months = 1; months < 13; months++ ) {
@@ -41,6 +41,7 @@ void Game::gameLoop()
 					cout << "Gz your win your score is: " << m_zoo.GetMoney() << endl;
 					return;
 				}
+				m_zoo.UpdateZoo();
 				continue;
 			}
 			else {

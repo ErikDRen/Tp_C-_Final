@@ -4,15 +4,32 @@
 
 using namespace std;
 
-Tigre::Tigre()
+Tigre::Tigre(Zoo* zoo)
+    :IAnimal(zoo)
 {
-
+    m_zoo = zoo;
+    conso = 180;
 }
 
-Tigre::Tigre(string name)
-    :IAnimal(name)
+Tigre::Tigre(Zoo* zoo, string name, int age, bool female, bool hungry, bool sexual_maturity, bool gestation)
+    :IAnimal(zoo, name, age, female, hungry, sexual_maturity, gestation)
 {
+    m_zoo = zoo;
+    conso = 180;
+    myage = age;
+    myhungry = hungry;
+    mygestation = gestation;
+    mysexual_maturity = sexual_maturity;
     cout << "groooar je suis " + name << endl;
+}
+
+void Tigre::Update()
+{
+    Eat();
+}
+
+void Tigre::Eat() {
+    m_zoo->decreaseMeats(conso);
 }
 
 void Tigre::fire()
@@ -27,3 +44,19 @@ void Tigre::fire()
 //     }
 // }
 
+void Tigre::ifHungry()
+{
+    if (myhungry == true /* &&  meat == 0*/)
+    {
+        mygestation = false;
+        mysexual_maturity = false;
+    }
+}
+
+void Tigre::CheckifHungry()
+{
+    /*if(pas manger)
+    {
+        myhungry = true
+    }*/
+}

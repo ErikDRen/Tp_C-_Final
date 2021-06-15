@@ -6,6 +6,7 @@
 #include <iostream>
 
 using namespace std;
+class IAnimal;
 typedef vector <IAnimal*> AnimalList;
 typedef AnimalList::iterator AnimalIterator;
 class Zoo
@@ -20,11 +21,14 @@ class Zoo
 public:
     Zoo(string name = "");
     string getName();
+    void UpdateZoo();
     int GetMoney();
     int GetMeatsStock();
     int GetSeedsStock();
     void BuyMeats();
     void BuySeeds();
+    void decreaseMeats(int op);
+    void decreaseSeeds(int op);
     //static int GetCount();
     void PrintZooInfo();
     void addAnimal(IAnimal* animal);
