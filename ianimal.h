@@ -8,7 +8,7 @@ class Zoo;
 class IAnimal
 {
     string m_name;
-
+    int m_id;
     //static int count;
      bool m_female;
     // bool fidelity;
@@ -16,14 +16,16 @@ class IAnimal
     bool m_hungry;
     bool m_gestation;
     int m_age;
-
 protected:
     Zoo* m_zoo;
 
 public:
-    IAnimal(Zoo* zoo);
-    IAnimal(Zoo* zoo, string m_name,int m_age,bool female, bool m_hungry,bool m_sexual_maturity,bool m_gestation);
+    string m_type;
+    IAnimal(Zoo* zoo, string type, int id);
+    IAnimal(Zoo* zoo, string type, string m_name, int id,int m_age,bool female, bool m_hungry,bool m_sexual_maturity,bool m_gestation);
     virtual ~IAnimal();
+    virtual bool checkAge() = 0;
+    int GetId();
     virtual void Update() = 0;
     virtual void fire() = 0;
     // int Grow();

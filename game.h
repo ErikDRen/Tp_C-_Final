@@ -12,7 +12,10 @@ class Game
 	Zoo m_zoo;
 	void gameLoop();
 	void chooseAnAction();
-	void ChooseFood();
+	void chooseFood();
+	void chooseAnimal();
+	bool buyAnimal(int price);
+	int sellPrice(IAnimal* animal);
 public:
 	Game();
 	~Game();

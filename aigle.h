@@ -7,17 +7,22 @@ using namespace std;
 
 class Aigle :public IAnimal
 {
+    string m_name;
     Zoo* m_zoo;
+    int id;
     int conso;
-    // int myage;
+    int myage;
+    int espVie = 2;
     // bool myfemale;
     // bool myhungry;
     // bool mysexual_maturity;
     // bool mygestation;
 public:
-    Aigle(Zoo* zoo);
-    Aigle(Zoo* zoo, string name, int age, bool female, bool hungry, bool sexual_maturity, bool gestation);
+    string type = "Aigle";
+    Aigle(Zoo* zoo, string type, int id);
+    Aigle(Zoo* zoo, string type, string name, int id,int age, bool female, bool hungry, bool sexual_maturity, bool gestation);
     void Eat();
+    virtual bool checkAge();
     virtual void Update();
     virtual void fire();
 };

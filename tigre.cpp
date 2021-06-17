@@ -4,28 +4,41 @@
 
 using namespace std;
 
-Tigre::Tigre(Zoo* zoo)
-    :IAnimal(zoo)
+Tigre::Tigre(Zoo* zoo, string type, int id)
+    :IAnimal(zoo ,type, id)
 {
+    m_name = "No Name";
+    myage = 0;
     m_zoo = zoo;
     conso = 180;
+    //id = m_zoo->GetCount();
 }
 
-Tigre::Tigre(Zoo* zoo, string name, int age, bool female, bool hungry, bool sexual_maturity, bool gestation)
-    :IAnimal(zoo, name, age, female, hungry, sexual_maturity, gestation)
+Tigre::Tigre(Zoo* zoo, string type, string name, int id,int age, bool female, bool hungry, bool sexual_maturity, bool gestation)
+    :IAnimal(zoo,type, name,id, age, female, hungry, sexual_maturity, gestation)
 {
+    m_name = name;
+    myage = age;
     m_zoo = zoo;
     conso = 180;
     myage = age;
     myhungry = hungry;
     mygestation = gestation;
     mysexual_maturity = sexual_maturity;
+    //id = m_zoo->GetCount();
     cout << "groooar je suis " + name << endl;
 }
 
+bool Tigre::checkAge() {
+    if (myage > espVie) {
+        return false;
+    }
+    return true;
+}
 void Tigre::Update()
 {
     Eat();
+    myage++;
 }
 
 void Tigre::Eat() {
@@ -34,7 +47,7 @@ void Tigre::Eat() {
 
 void Tigre::fire()
 {
-    cout << "Je rugis" << endl;
+    cout << m_name << " rugis : " << "id: " << this->GetId() << " " << "age: " << myage << " " << "espVie: " << espVie << endl;
 }
 
 // bool Tigre::CanBirth()
